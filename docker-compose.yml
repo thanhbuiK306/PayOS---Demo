@@ -1,0 +1,19 @@
+# version: '3.8'
+
+# services:
+
+#   # mongodb:
+#   #   image: mongo:latest
+#   #   environment:
+#   #     MONGO_INITDB_ROOT_USERNAME: root
+#   #     MONGO_INITDB_ROOT_PASSWORD: password
+#   #     MONGO_INITDB_DATABASE: ebook
+#   #   ports:
+#   #     - 27018:27017
+#   #   volumes:
+#   #     - mongodb_data_container:/data/db
+# networks:
+#   ebook:
+
+# # volumes:
+# #   mongodb_data_container:
