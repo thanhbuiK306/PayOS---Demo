@@ -16,7 +16,6 @@ router.post('/create-payment', async(req, res, next) => {
     buyerEmail,
     buyerPhone} = req.body
 
-    console.log(orderCode)
     const order = {
         orderCode: orderCode,
         amount: total,
@@ -30,9 +29,9 @@ router.post('/create-payment', async(req, res, next) => {
         // buyerAddress?: string;
         expiredAt: Math.floor((Date.now() + 15*60*1000)/1000)
     }
+
     try {
         const paymentLink = await payos.createPaymentLink(order);
-        console.log(paymentLink)
         return res.json(paymentLink)
     } catch (error) {
         console.log(error)

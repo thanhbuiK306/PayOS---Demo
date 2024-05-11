@@ -48,7 +48,7 @@ export async function cancelOrder(orderId){
   try {
       const res = await axios({
         method: "POST",
-        url: `${process.env.REACT_APP_ORDER_URL}/order/${orderId}`,
+        url: `http://localhost:6020/api/order/${orderId}`,
         headers: {
           "Content-Type": "application/json",
         },
