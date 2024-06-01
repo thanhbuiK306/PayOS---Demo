@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-exports.MongoConnect = () => {
+exports.MongoConnect = async () => {
 
 	mongoose.set('debug', (coll, method, query, doc, options) => {
 		let logs = {
@@ -20,6 +20,7 @@ exports.MongoConnect = () => {
 	// 	pass:"password"
 	// }
 	// connection.openUri(process.env.MONGO_URL, options) 
+	console.log(process.env.MONGO_URL)
 	connection.openUri(process.env.MONGO_URL)
 
 	connection.once('open', () => {

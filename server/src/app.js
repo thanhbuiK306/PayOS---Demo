@@ -25,7 +25,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 const PORT = process.env.EBOOK_SERVICE_PORT || 6020
-MongoConnect();
 
 
 app.use(cookieParser());
@@ -36,7 +35,8 @@ app.use("/api/payment", paymentRouter);
 
 app.use(notFound);
 app.use(errorHandler);
-app.listen(PORT, () => {
+app.listen(PORT, async() => {
+    await MongoConnect();
     console.log(`listening to port ${PORT}`);
 })
 .on('error', (err) => {
